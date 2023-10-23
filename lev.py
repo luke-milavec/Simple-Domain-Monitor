@@ -15,7 +15,7 @@ def is_similar_to_domains(input_string, domains_set):
     for domain in domains_set:
         # Calculate Levenshtein distance between input_string and each domain
         distance = Levenshtein.distance(input_string, domain)
-        if distance <= 3:
+        if distance <= 3 and domain != 0:
             return False  # Input is within 3-letter similarity to a domain
     return True  # Input is not within 3-letter similarity to any domain
 
